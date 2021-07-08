@@ -1,0 +1,100 @@
+CORE(syntaxe){
+  <?php
+    //code PHP;
+  ?>
+}
+
+VARIABLE{
+  //DECLARATION{
+    $var0 = 10;
+    $var1 = 20;
+    $sumResult = $var0 + $var1;
+    echo "result = $sumResult"; //output => result = 30
+  }
+
+  //TYPES{
+    - string: $varStr = "string type"; 
+    - integer(int): $varInt = 7;
+    - float: $varFlt = 3.14;
+    - boolean: $varBol = true;
+    - array: varTab = array("elem0", "elem1", ... , "elemN");
+    - null: pas de valeur (undefined/vide)
+    - object: $instance0 = new myObject();
+
+    //note: on ne peut pas faire "echo" directement un ARRAY (ex: echo $varTab)
+
+    //fonction_variable(native){
+
+      - var_dump(<var>): retourner le "type|length" d'une variable en argument
+
+    }
+  }
+}
+
+READ&WRITE{
+  //READ{
+ 
+  }
+
+  //WRITE{
+    $pers = "world";
+    echo "Hello $pers !"; //output => hello world !
+    echo 'Hello $pers !'; //output => hello $pers !
+    echo 'Hello ' . $pers . ' !' //output => hello world !
+  
+    //note: une simple quote '$var' va interpreter directement le nom de la variable ($var) mais pas sa valeur, sinon vous serez obliger d'utiliser la concatenation "." 
+  } 
+}
+
+SCOPES(portee){
+    //3 TYPES DE SCOPES en PHP{
+
+      - global: en dehors d'une bloc de code (condition, boucle, fonction, ...)
+      - local: dans une bloc de code 
+      - static: 
+  
+    }
+
+    //note: lorsqu'une variable est declarer dans une scope global (variable global), on ne peut pas acceder dans cette variable via une scope local ET IVERSSEMENT
+
+    //DECLARATION d'une variable global: On utilise le mot cle "global" avant la variable (ex: global $varGlob;)
+    //On peut declarer un tableau qui contient toute les variables qu'on veut declarer comme global par $GLOBALS['varGlob'] (pas de $ sur la variable)
+
+    //Exemple{
+
+      exemple(global){
+       //variable
+       $my_var0 = 10;
+       $my_var1 = 20;
+
+       function myFunc(){
+         global $my_var0;
+         global $my_var1;
+         echo $my_var0 + $my_var1; //output => 30
+         echo "</br>";
+         echo $GLOBALS['my_var0'] + $GLOBALS['my_var1']; //output => 30
+       }
+
+       myFunc();
+      }
+
+      exemple(static){
+        $rc = "</br>";
+
+       function addOneLine(){
+         static $varStat0 = 0;
+         $varStat0++;
+         echo "varStat(+1) = $varStat0";
+       }
+        
+       echo "init varStat value = 0";
+       echo $rc;
+       addOneLine(); //output => varStat(+1) = 1
+       echo $rc;
+       addOneLine(); //output => varStat(+1) = 2
+       echo $rc;
+       addOneLine(); //output => varStat(+1) = 3
+      }
+
+    }
+}
