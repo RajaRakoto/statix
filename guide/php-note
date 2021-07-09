@@ -125,3 +125,82 @@ ARRAY{
     }
   }
 }
+
+OBJET{
+
+  //creation d'une class
+         class Student {
+
+          //proprietes
+          public $id;
+          public $name;
+          public $note;
+          public $exam;
+
+          //constructor
+          function __construct ($id, $name, $exam, $note){
+            $this->id = $id;
+            $this->name = $name;
+            $this->exam = $exam;
+            $this->note = $note;
+          }
+
+          //method
+          function resultExam(){
+
+            if ($this->exam){ //passer a l'examen
+
+              echo "<h2>** RESULTAT DE VOTRE EXAMEN **</h2><br><br>";
+              echo "<strong> ID :</strong> $this->id<br><br>";
+              echo "<strong> Nom/prenom(s) :</strong> $this->name<br><br>";
+
+              //parcours des notes
+              $stock = 0; //pour la moyenne
+              foreach ($this->note as $module => $noteValue){
+                echo "<strong>$module :</strong> $noteValue <br><br>";
+
+                //calcul somme des notes
+                $stock = $stock + $noteValue;
+                $sum = $stock;
+              }
+              //output
+              echo "TOTAL(notes) = $sum";
+              $numModule = count($this->note); //nombre des notes
+              $result = $sum/$numModule;
+              echo "<br>MOYENNE = $result";
+
+            }else{
+              echo "Pas de resultat !";
+            }
+
+            //test passage
+            if ($result >= 10){
+              echo "<br><i>Vous etes ADMIS au niveau superieur !</i>";
+            }else{
+              echo "<br>Vous etes redoublant !";
+            }
+
+
+          }
+
+         }
+
+         //input (fakedata)
+         $id1 = 1;
+         $name1 = "RAKOTONIRINA Raja";
+         $exam1 = true;
+         $note1 = array("Note 1" => 13, "Note 2" => 7, "Note 3" => 10);
+
+         $id2 = 2;
+         $name2 = "RAMANANDRAIBE Kanto";
+         $exam2 = true;
+         $note2 = array("Note 1" => 15, "Note 2" => 10, "Note 3" => 12);
+         
+         //instance Etudiant
+         $Student1 = new Student($id1, $name1, $exam1, $note1);
+         $Student1->resultExam();
+
+         $Student2 = new Student($id2, $name2, $exam2, $note2);
+         $Student2->resultExam();
+
+}
