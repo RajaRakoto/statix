@@ -36,6 +36,7 @@ VARIABLE{
       - str_word_count(<var>): compter le nombre de mot dans la variable en argument
       - strrev(<var>: reverser tout les chaines de caractere de la variabele en argument
       - strpos(<var>,"<value>"): retourner la position de "<value>" dans la variable <var>
+      - count(<var_array>): retourne le nombre d'element d'un tableau
 
     }
   }
@@ -61,7 +62,7 @@ SCOPES(portee){
 
       - global: en dehors d'une bloc de code (condition, boucle, fonction, ...)
       - local: dans une bloc de code 
-      - static: 
+      - static: va stocker la derniere valeur de la variable declarer comme static
   
     }
 
@@ -107,4 +108,20 @@ SCOPES(portee){
       }
 
     }
+}
+
+ARRAY{
+  2D(proprietE => valeur){
+    $my_array = array ("price_prod1" => 10000, "price_prod2" => 20000, "price_prod3" => 30000);
+
+    //parcours du tableau(foreach)
+    $i = 1;
+    foreach($my_array as $prod => $price){
+      echo "produit $i = $prod";
+      echo "<br>";
+      echo "prix $i = $price";
+      $i++;
+      echo "<br>";
+    }
+  }
 }
