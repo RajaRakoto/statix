@@ -10,6 +10,12 @@ VARIABLE{
     $var1 = 20;
     $sumResult = $var0 + $var1;
     echo "result = $sumResult"; //output => result = 30
+    define ("varConst", "chaine de caractere");
+  //info php{
+    <.?php
+
+    phpinfo();
+  }
   }
 
   //TYPES{
@@ -17,7 +23,7 @@ VARIABLE{
     - integer(int): $varInt = 7;
     - float: $varFlt = 3.14;
     - boolean: $varBol = true;
-    - array: varTab = array("elem0", "elem1", ... , "elemN");
+    - array: $varTab = array("elem0", "elem1", ... , "elemN");
     - null: pas de valeur (undefined/vide)
     - object: $instance0 = new myObject();
 
@@ -26,6 +32,10 @@ VARIABLE{
     //fonction_variable(native){
 
       - var_dump(<var>): retourner le "type|length" d'une variable en argument
+      - strlen(<var>): compter le nombre de caractere dans la variable en argument
+      - str_word_count(<var>): compter le nombre de mot dans la variable en argument
+      - strrev(<var>: reverser tout les chaines de caractere de la variabele en argument
+      - strpos(<var>,"<value>"): retourner la position de "<value>" dans la variable <var>
 
     }
   }
