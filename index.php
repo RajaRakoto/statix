@@ -68,9 +68,11 @@
     <meta name="author" content="Raja RAKOTONIRINA,Kanto RAMANANDRAIBE"> 
 
   <!-- CDN IMPORT -->
-    <!-- datatables CDN -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <!-- datatables CDN & Jquery CDN -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.4/css/scroller.jqueryui.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- font awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -245,7 +247,14 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-        $('#statix_table').DataTable();
+        $('#statix_table').DataTable( {
+          deferRender: true,
+          select: true, //test
+          scrollY: 400, //remplir la fenetre (main box) | activer le defilement dans le tableau
+          scroller: true,
+          stateSave: true //garder l'etat de scroller (meme apres une rechargement de la page)
+          }
+        );
     } );
   </script>
 </body>
