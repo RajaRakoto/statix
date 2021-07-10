@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.4/css/scroller.jqueryui.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.4/css/scroller.dataTables.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- font awesome CDN -->
@@ -96,12 +97,16 @@
 <body>
   <!-- HEADER -->
   <header>
-    <h2 id="head"><span id="statix-text">STATIX</span> table</h2>
+    <h1 id="head"><span id="statix-text">STATIX</span> table</h1>
   </header>
   
   <!-- MAIN -->
-
+  <main>
     <div class="container">
+        <!-- DATE -->
+        <h2>DATE: <?php echo date("d/m/Y"); ?></h2>
+
+        <br>
 
         <!-- NOTIFICATION - insertion|suppression (generator) -->
         <?php
@@ -245,18 +250,19 @@
   <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function() {
+    <script type="text/javascript">
+      $(document).ready(function() {
         $('#statix_table').DataTable( {
           deferRender: true,
-          select: true, //test
+          select: true,
           scrollY: 400, //remplir la fenetre (main box) | activer le defilement dans le tableau
           scroller: true,
           stateSave: true //garder l'etat de scroller (meme apres une rechargement de la page)
           }
         );
-    } );
-  </script>
+      } );
+    </script>
+  </main>
 </body>
 
 </html>
