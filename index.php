@@ -92,9 +92,30 @@
   <!-- TITLE -->
   <title>STATIX APP</title>
   
+  <!-- HORLOGE -->
+  <script type="text/javascript"> 
+         function refresh(){
+             var t = 1000; // rafraîchissement en millisecondes
+             setTimeout('showDate()',t)
+         }
+         
+         function showDate() {
+             var date = new Date()
+             var h = date.getHours();
+             var m = date.getMinutes();
+             var s = date.getSeconds();
+             if( h < 10 ){ h = '0' + h; }
+             if( m < 10 ){ m = '0' + m; }
+             if( s < 10 ){ s = '0' + s; }
+             var time = h + 'h : ' + m + 'mn : ' + s + 's'
+             document.getElementById('horloge').innerHTML = time;
+             refresh();
+          }
+  </script>
+
 </head>
 
-<body>
+<body onload=showDate();>
   <!-- HEADER -->
   <header>
     <h1 id="head"><span id="statix-text">STATIX</span> table</h1>
@@ -105,23 +126,26 @@
     <div class="container">
         <!-- DATE -->
         <h2>DATE: <?php echo date("d/m/Y"); ?></h2>
+        
+        <span id='horloge' style="background-color:#1C1C1C;color:silver;font-size:27px;border-radius:7px;opacity:0.6;padding:7px"></span>
 
-        <br>
+        <br><br>
 
         <!-- NOTIFICATION - insertion|suppression (generator) -->
+        <h5>Notification: </h5>
         <?php
           if (isset($notif)) { ?>
           <div class="form-group">
-              <!-- return: class "alert alert-success|alert-danger" -->
-              <div class="alert <?php echo $notifClass; ?>"><?php echo $notif; ?>
-              </div>
+            <!-- return: class "alert alert-success|alert-danger" -->
+            <div class="alert <?php echo $notifClass; ?>"><?php echo $notif; ?>
           </div>
-          <?php
+        </div>
+        <?php
           }
-	      ?>
+        ?>
 
         <!-- MODEL0 (button) -->
-          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right" data-toggle="modal" data-target="#myModal">INPUT</button>
+          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right; font-size:22px" data-toggle="modal" data-target="#myModal">INPUT</button>
 
       <table id="statix_table" class="display responsive nowrap" cellspacing="0" width="100%">
         <!-- ENTETE DU TABLEAU - statique (html) -->
@@ -218,7 +242,7 @@
                 <input type="text" name="niveau" class="form-control" placeholder="Entrer Niveau">
               </div>
 
-            <input type="submit" value="Ajouter au BD" name="submit" class="btn btn-success btn-sm">
+            <input type="submit" value="Ajouter au BD" name="submit" class="btn btn-success btn-sm" style="font-size:17px;">
 
            </form> 
         </div>
@@ -236,7 +260,7 @@
   
   <!-- GRAPH BUTTON -->
   <div align="center">
-    <button class = "btn btn-primary btn-sm"><a href = "graph.php" style = "text-decoration: none; color: #fff;"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    <button class = "btn btn-primary btn-sm"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 25px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
