@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : sam. 10 juil. 2021 à 16:17
+-- Généré le : sam. 10 juil. 2021 à 18:40
 -- Version du serveur :  10.4.19-MariaDB
 -- Version de PHP : 8.0.6
 
@@ -32,9 +32,9 @@ CREATE TABLE `statix_database` (
   `nom` varchar(100) COLLATE utf8_bin NOT NULL,
   `prenom` varchar(100) COLLATE utf8_bin NOT NULL,
   `activite` varchar(50) COLLATE utf8_bin NOT NULL,
-  `etablissement` varchar(25) COLLATE utf8_bin NOT NULL,
-  `filiere` varchar(25) COLLATE utf8_bin NOT NULL,
-  `niveau` varchar(5) COLLATE utf8_bin NOT NULL,
+  `etablissement` varchar(50) COLLATE utf8_bin NOT NULL,
+  `filiere` varchar(50) COLLATE utf8_bin NOT NULL,
+  `niveau` varchar(20) COLLATE utf8_bin NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -56,7 +56,7 @@ ALTER TABLE `statix_database`
 -- AUTO_INCREMENT pour la table `statix_database`
 --
 ALTER TABLE `statix_database`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
