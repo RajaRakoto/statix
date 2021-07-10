@@ -8,6 +8,6 @@ $databaseName = "statix_database"; //nom de la base de donnee
     $statix_connexion = new mysqli($serverName, $userName, $password, $databaseName);
     // Verifier si la connexion a statix_database est echouE
     if ($statix_connexion->connect_error) {
-        die("ERROR connexion ($databaseName): " . $conn->connect_error);
+        die("ERROR connexion ($databaseName): " . $statix_connexion->connect_error);
     } 
 ?>
