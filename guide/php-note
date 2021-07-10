@@ -215,6 +215,14 @@ PHP+MYSQL{
 
   }
 
+  query{
+
+  }
+
+  fetch_assoc{
+    
+  }
+
   mysqli_query{
 
   }

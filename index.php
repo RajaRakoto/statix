@@ -113,12 +113,12 @@
           <?php
           }
 	      ?>
-        
+
         <!-- MODEL0 (button) -->
           <button type="button" class="btn btn-info btn-sm mb-5" style="float:right" data-toggle="modal" data-target="#myModal">INPUT</button>
 
       <table id="statix_table" class="display responsive nowrap" cellspacing="0" width="100%">
-        <!-- ENTETE DU TABLEAU -->
+        <!-- ENTETE DU TABLEAU - statique (html) -->
         <thead>
           <tr>
             <th>No#</th>
@@ -132,16 +132,44 @@
             <th>MANIPULATION</th>
           </tr>
         </thead>
-        <!-- CORPS DU TABLEAU (generE auto par php&mysql)-->
+        <!-- TABLEAU - dynamique (par html + php + mysql) -->
         <tbody>
-          <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-          </tr>
-          <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-          </tr>
+          <?php
+            require 'dbstatix_connect.php';
+            $sql = "SELECT * FROM statix_database";
+            $result = $statix_connexion->query($sql);
+
+            if ($result->num_rows > 0) {
+              // sortie des données de chaque ligne par $row
+              $i = 0; // index (No#)
+              while($row = $result->fetch_assoc()) {
+                  $nom = $row["nom"];
+                  $prenom = $row["prenom"];       
+                  $activite = $row["activite"];        
+                  $etablissement = $row["etablissement"];
+                  $filiere = $row["filiere"];
+                  $niveau = $row["niveau"];
+                  $date = $row["date"];
+            ?>
+            <tr>
+                <td><?php $i++; echo $i; ?></td> <!-- No# -->
+                <td><?php echo $nom; ?></td>
+                <td><?php echo $prenom; ?></td>
+                <td><?php echo $activite; ?></td>
+                <td><?php echo $etablissement; ?></td>
+                <td><?php echo $filiere; ?></td>
+                <td><?php echo $niveau; ?></td>
+                <td><?php echo $date; ?></td>
+                <!-- MANIPULATION ($row) -->
+                <td>
+                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                        <a href="index.php?id=<?php echo $id; ?>"><button class="btn btn-danger btn-sm" name="del_data"><i class="fas fa-trash"></i></button></a>
+                    </form>
+                </td>
+              <?php }  ?>
+            </tr>
+            <?php } ?>  
         </tbody>
       </table>
 
