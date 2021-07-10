@@ -69,8 +69,8 @@
 
   <!-- CDN IMPORT -->
     <!-- datatables CDN -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/  css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.  10.25/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
 
     <!-- font awesome CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -177,6 +177,21 @@
 
   </main>
   
+  <!-- GRAPH BUTTON -->
+  <div align="center">
+    <button class = "btn btn-primary btn-sm"><a href = "graph.php" style = "text-decoration: none; color: #fff;"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+  </div>
+
+  <!-- DATATABLES core //bug -->
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+  </script>
+
   <!-- FOOTER -->
   <footer>
     <h5 id="foot">Raja RAKOTONIRINA & Kanto RAMANANDRAIBE <br>Copyright &copy;</h5>
