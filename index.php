@@ -173,7 +173,60 @@
         </tbody>
       </table>
 
+  <!-- INPUT (modal) -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Header (modal) -->
+        <div class="modal-header">
+          <h4 class="modal-title">INPUT</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- body (modal) -->
+        <div class="modal-body">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            
+              <div class="form-group">
+                <input type="text" name="nom" class="form-control" placeholder="Entrer Nom">
+              </div>
+          
+              <div class="form-group">
+                <input type="text" name="prenom" class="form-control" placeholder="Entrer Prenom">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="activite" class="form-control" placeholder="Entrer Activite">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="etablissement" class="form-control" placeholder="Entrer Etablissement">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="filiere" class="form-control" placeholder="Entrer Filiere">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" name="niveau" class="form-control" placeholder="Entrer Niveau">
+              </div>
+
+            <input type="submit" value="Ajouter au BD" name="submit" class="btn btn-success btn-sm">
+
+           </form> 
+        </div>
+        
+        <!-- footer (modal) -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Sortir</button>
+        </div>
+        
+      </div>
     </div>
+  </div>          
+
+  </div>
 
   </main>
   
@@ -181,6 +234,13 @@
   <div align="center">
     <button class = "btn btn-primary btn-sm"><a href = "graph.php" style = "text-decoration: none; color: #fff;"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
+
+    <br>
+
+  <!-- FOOTER -->
+  <footer>
+      <h5 id="foot">Raja RAKOTONIRINA <span id="etcom-blue">&</span> Kanto RAMANANDRAIBE<br><span id="copy-size">Copyright &copy;</span></h5>
+  </footer>
 
   <!-- DATATABLES core //bug -->
   <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
@@ -191,14 +251,6 @@
         $('#example').DataTable();
     } );
   </script>
-
-    <br>
-
-  <!-- FOOTER -->
-  <footer>
-      <h5 id="foot">Raja RAKOTONIRINA <span id="etcom-blue">&</span> Kanto RAMANANDRAIBE<br><span id="copy-size">Copyright &copy;</span></h5>
-  </footer>
-
 </body>
 
 </html>
