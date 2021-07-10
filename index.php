@@ -115,17 +115,17 @@
 
 </head>
 
-<body onload=showDate();>
+<body style="background-color:#a8a8a8" onload=showDate();>
   <!-- HEADER -->
   <header>
-    <h1 id="head"><span id="statix-text">STATIX</span> table</h1>
+    <h1 id="head" style="font-size:70px"><span id="statix-text">STATIX</span> table</h1>
   </header>
   
   <!-- MAIN -->
   <main>
-    <div class="container">
+    <div class="container" style="background-color:rgb(245, 245, 245)">
         <!-- DATE -->
-        <h2>DATE: <?php echo date("d/m/Y"); ?></h2>
+        <h2><u>Stat</u>: <span style="color:gray">Centre Multimedia</span> | <u>Date</u>: <span style="color:gray"><?php echo date("d/m/Y"); ?></span></h2>
         
         <span id='horloge' style="background-color:#1C1C1C;color:silver;font-size:27px;border-radius:7px;opacity:0.6;padding:7px"></span>
 
@@ -266,7 +266,9 @@
   
   <!-- GRAPH BUTTON -->
   <div align="center">
-    <button class = "btn btn-primary btn-sm"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 25px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e;
+    -webkit-box-shadow:inset 1px 2px 20px #5e5e5e;
+    box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 35px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
