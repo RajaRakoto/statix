@@ -159,7 +159,8 @@
             <th>Filiere</th>
             <th>Niveau</th>
             <th>Date</th>
-            <th>MANIPULATION</th>
+            <th>update</th>
+            <th>delete</th>
           </tr>
         </thead>
         <!-- TABLEAU - dynamique (par html + php + mysql) -->
@@ -171,7 +172,7 @@
 
             if ($result->num_rows > 0) {
               // sortie des données de chaque ligne par $row
-              $i = 0; // index (No#)
+              $index = 0; // index (No#)
               while($row = $result->fetch_assoc()) {
                   $nom = $row["nom"];
                   $prenom = $row["prenom"];       
@@ -182,20 +183,25 @@
                   $date = $row["date"];
             ?>
             <tr>
-                <td><?php $i++; echo $i; ?></td> <!-- No# -->
-                <td><?php echo $nom; ?></td>
-                <td><?php echo $prenom; ?></td>
-                <td><?php echo $activite; ?></td>
-                <td><?php echo $etablissement; ?></td>
+                <td><?php $index++; echo "<div align='center'><span id='index' style='font-size:20px;color:green'>$index</span></div>"; ?></td> <!-- No# -->
+                <td><?php echo "<strong>$nom</strong>"; ?></td>
+                <td><?php echo "<div align='center'><strong>$prenom</strong></div>"; ?></td>
+                <td><?php echo "<div align='center'><span id='act' style='font-size:13px;color:purple'>$activite</span></div>"; ?></td>
+                <td><?php echo "<div align='center'>$etablissement</div>"; ?></td>
                 <td><?php echo $filiere; ?></td>
-                <td><?php echo $niveau; ?></td>
-                <td><?php echo $date; ?></td>
-                <!-- MANIPULATION ($row) -->
+                <td><?php echo "<span id='act' style='color:brown'>$niveau</span>"; ?></td>
+                <td><?php echo "<i>$date</i>"; ?></td>
+                <!-- MANIPULATION - update|delete ($row) -->
                 <td>
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <a href="index.php?id=<?php echo $indexd; ?>"><div align="center"><button class="btn btn-warning btn-sm" name="update_data"><i class="fas fa-edit"></i></div></button></a>
+                  </form>
+                </td>
+                <td>
+                  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-                        <a href="index.php?id=<?php echo $id; ?>"><button class="btn btn-danger btn-sm" name="del_data"><i class="fas fa-trash"></i></button></a>
-                    </form>
+                        <a href="index.php?id=<?php echo $indexd; ?>"><div align="center"><button class="btn btn-danger btn-sm" name="del_data"><i class="fas fa-trash"></i></div></button></a>
+                  </form>
                 </td>
               <?php }  ?>
             </tr>
