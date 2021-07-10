@@ -37,7 +37,20 @@
   
   <?php
     //DELETE (notification test)
-    
+      if (isset($_POST['del_data'])) {
+        $query="DELETE FROM statix_database WHERE id=".$_POST['id'];
+
+        //OUTPUT (result)
+      	$result = mysqli_query($statix_connexion, $query); //retourne une valeur boolean
+      	if($result){ //si les donnees ont ete bien supprimer de la base de donnees
+              $notif= "SUPPRESSION avec success !";
+              $notifClass="alert-success";
+      	}
+      	else { //si les donnees n'ont pas ete supprimer dans la base de donnees
+              $notif= "ERREUR de suppression !";
+              $notifClass="alert-danger";
+        }
+      }
   ?>
 <!-- PHP CORE (END)-->
 
@@ -90,7 +103,6 @@
     <div class="container">
 
         <!-- NOTIFICATION - insertion|suppression (generator) -->
-          
 
         <!-- MODEL0 (button) -->
           <button type="button" class="btn btn-info btn-sm mb-5" style="float:right" data-toggle="modal" data-target="#myModal">INPUT</button>
