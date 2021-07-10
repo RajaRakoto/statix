@@ -87,7 +87,7 @@
     <link rel="stylesheet" href="style.css" />
   
   <!-- TITLE -->
-  <title>STATIX APPS</title>
+  <title>STATIX APP</title>
   
 </head>
 
@@ -98,7 +98,6 @@
   </header>
   
   <!-- MAIN -->
-  <main>
 
     <div class="container">
 
@@ -227,8 +226,6 @@
   </div>          
 
   </div>
-
-  </main>
   
   <!-- GRAPH BUTTON -->
   <div align="center">
@@ -248,7 +245,7 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-        $('#example').DataTable();
+        $('#statix_table').DataTable();
     } );
   </script>
 </body>
