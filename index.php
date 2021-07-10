@@ -18,9 +18,10 @@
       $etablissement = $_POST['etablissement'];
       $filiere = $_POST['filiere'];
       $niveau = $_POST['niveau'];
+      $freq = $_POST['freq'];
       
       //ajout de l'entrer au base de donnees
-      $sql = "INSERT INTO statix_database(nom, prenom, activite, etablissement, filiere, niveau) VALUES('$nom', '$prenom', '$activite', '$etablissement', '$filiere', '$niveau')";
+      $sql = "INSERT INTO statix_database(nom, prenom, activite, etablissement, filiere, niveau, freq) VALUES('$nom', '$prenom', '$activite', '$etablissement', '$filiere', '$niveau', '$freq')";
 
       //OUTPUT (result)
       $result = mysqli_query($statix_connexion, $sql); //retourne une valeur boolean
@@ -123,7 +124,7 @@
   
   <!-- MAIN -->
   <main>
-    <div class="container" style="background-color:rgb(245, 245, 245)">
+    <div class="container-sm" style="background-color:rgb(245, 245, 245)">
         <!-- DATE -->
         <h2><u>Stat</u>: <span style="color:gray">Centre Multimedia</span> | <u>Date</u>: <span style="color:gray"><?php echo date("d/m/Y"); ?></span></h2>
         
@@ -151,13 +152,14 @@
         <!-- ENTETE DU TABLEAU - statique (html) -->
         <thead>
           <tr>
-            <th>No#</th>
+            <th>Id#</th>
             <th>Nom</th>
             <th>Prenom</th>
             <th>Activite</th>
             <th>Etablissement</th>
             <th>Filiere</th>
             <th>Niveau</th>
+            <th>Freq</th>
             <th>Date</th>
             <th>update</th>
             <th>delete</th>
@@ -172,7 +174,7 @@
 
             if ($result->num_rows > 0) {
               // sortie des données de chaque ligne par $row
-              $index = 0; // index (No#)
+              $index = 0; // index (Id#)
               while($row = $result->fetch_assoc()) {
                   $nom = $row["nom"];
                   $prenom = $row["prenom"];       
@@ -180,16 +182,19 @@
                   $etablissement = $row["etablissement"];
                   $filiere = $row["filiere"];
                   $niveau = $row["niveau"];
+                  $freq = $row["freq"];
                   $date = $row["date"];
             ?>
             <tr>
-                <td><?php $index++; echo "<div align='center'><span id='index' style='font-size:20px;color:green'>$index</span></div>"; ?></td> <!-- No# -->
+              
+                <td id="td-index" style="background-color: rgb(185, 185, 185); margin: 10px; border-radius: 100px"><?php $index++; echo "<div align='center'><span id='index' style='font-size:25px; color: #fff'>$index</span></div>"; ?></td> <!-- Id# -->
                 <td><?php echo "<strong>$nom</strong>"; ?></td>
-                <td><?php echo "<div align='center'><strong>$prenom</strong></div>"; ?></td>
-                <td><?php echo "<div align='center'><span id='act' style='font-size:13px;color:purple'>$activite</span></div>"; ?></td>
-                <td><?php echo "<div align='center'>$etablissement</div>"; ?></td>
+                <td><?php echo "<strong>$prenom</strong>"; ?></td>
+                <td><?php echo "<span id='act' style='font-size:17px;color:purple'>$activite</span>"; ?></td>
+                <td><?php echo "$etablissement"; ?></td>
                 <td><?php echo $filiere; ?></td>
                 <td><?php echo "<span id='act' style='color:brown'>$niveau</span>"; ?></td>
+                <td><?php echo "<div align='center'><span id='freq' style='color:teal;font-size:20px;font-weight: bolder;'>$freq</span></div>"; ?></td>
                 <td><?php echo "<i>$date</i>"; ?></td>
                 <!-- MANIPULATION - update|delete ($row) -->
                 <td>
@@ -247,6 +252,10 @@
               <div class="form-group">
                 <input type="text" name="niveau" class="form-control" placeholder="Entrer Niveau">
               </div>
+              
+              <div class="form-group">
+                <input type="number" name="freq" class="form-control" placeholder="Entrer Frequentation">
+              </div>
 
             <input type="submit" value="Ajouter au BD" name="submit" class="btn btn-success btn-sm" style="font-size:17px;">
 
@@ -272,7 +281,7 @@
   </div>
 
     <br>
-
+  </main>
   <!-- FOOTER -->
   <footer>
       <h5 id="foot">Raja RAKOTONIRINA <span id="etcom-blue">&</span> Kanto RAMANANDRAIBE<br><span id="copy-size">Copyright &copy;</span></h5>
@@ -294,7 +303,7 @@
         );
       } );
     </script>
-  </main>
+
 </body>
 
 </html>
