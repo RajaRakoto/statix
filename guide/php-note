@@ -204,3 +204,19 @@ OBJET{
          $Student2->resultExam();
 
 }
+
+PHP+MYSQL{
+
+  require{
+
+  }
+
+  isset{
+
+  }
+
+  mysqli_query{
+
+  }
+
+}
