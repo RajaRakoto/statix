@@ -103,7 +103,17 @@
     <div class="container">
 
         <!-- NOTIFICATION - insertion|suppression (generator) -->
-
+        <?php
+          if (isset($notif)) { ?>
+          <div class="form-group">
+              <!-- return: class "alert alert-success|alert-danger" -->
+              <div class="alert <?php echo $notifClass; ?>"><?php echo $notif; ?>
+              </div>
+          </div>
+          <?php
+          }
+	      ?>
+        
         <!-- MODEL0 (button) -->
           <button type="button" class="btn btn-info btn-sm mb-5" style="float:right" data-toggle="modal" data-target="#myModal">INPUT</button>
 
