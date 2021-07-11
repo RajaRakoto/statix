@@ -35,6 +35,40 @@
       }
     }
   ?>
+
+  <!-- <?php
+
+    //bug
+
+    //UPDATE (notification test)
+    if(isset($_POST['update_data'])){ //ecouteur d'evenement (sur le boutton "SUBMIT")
+      //recuperation de la valeur par $_POST
+      $nom = $_POST['nom']; 
+      $prenom = $_POST['prenom'];
+      $activite = $_POST['activite'];
+      $etablissement = $_POST['etablissement'];
+      $filiere = $_POST['filiere'];
+      $niveau = $_POST['niveau'];
+      $freq = $_POST['freq'];
+      
+      //mise a jour de l'entrer au base de donnees
+      $sql = "UPDATE statix_database 
+      SET nom = $nom, prenom = $prenom, activite = $activite, etablissement = $etablissement, filiere = $filiere, niveau = $niveau, freq = $freq
+      WHERE id = $id;
+      ";
+
+      //OUTPUT (result)
+      $result = mysqli_query($statix_connexion, $sql); //retourne une valeur boolean
+      if($result) { //si les donnees ont ete bien mis a jour dans la base de donnees
+        $notif = "MISE A JOUR avec success !"; //message
+        $notifClass="alert-success"; //change class (HTML+CSS)
+      }
+      else { //si les donnees n'ont pas ete mis a jour dans la base de donnees
+        $notif = "ERREUR de mise a jour !"; //message
+        $notifClass="alert-danger"; //change class (HTML+CSS)
+      }
+    }
+  ?> -->
   
   <?php
     //DELETE (notification test)
@@ -146,7 +180,7 @@
         ?>
 
         <!-- MODEL0 (button) -->
-          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right; font-size:22px" data-toggle="modal" data-target="#myModal">INPUT</button>
+          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right; font-size:41px" data-toggle="modal" data-target="#myModal">INPUT</button>
 
       <table id="statix_table" class="display responsive nowrap" cellspacing="0" width="100%">
         <!-- ENTETE DU TABLEAU - statique (html) -->
@@ -277,7 +311,7 @@
   <div align="center">
     <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e;
     -webkit-box-shadow:inset 1px 2px 20px #5e5e5e;
-    box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 35px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
@@ -287,7 +321,7 @@
       <h5 id="foot">Raja RAKOTONIRINA <span id="etcom-blue">&</span> Kanto RAMANANDRAIBE<br><span id="copy-size">Copyright &copy;</span></h5>
   </footer>
 
-  <!-- DATATABLES core //bug -->
+  <!-- DATATABLES core -->
   <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
