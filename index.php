@@ -41,7 +41,7 @@
     //bug
 
     //UPDATE (notification test)
-    if(isset($_POST['update_data'])){ //ecouteur d'evenement (sur le boutton "SUBMIT")
+    if(isset($_GET['update_data'])){ //ecouteur d'evenement (sur le boutton "SUBMIT")
       //recuperation de la valeur par $_POST
       $nom = $_POST['nom']; 
       $prenom = $_POST['prenom'];
@@ -122,7 +122,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
   
   <!-- CSS LINK -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   
   <!-- TITLE -->
   <title>STATIX APP</title>
@@ -272,7 +272,12 @@
               </div>
 
               <div class="form-group">
-                <input type="text" name="activite" class="form-control" placeholder="Entrer Activite">
+                <select name="activite" id="activite" class="form-control">
+					        <option value="Connexion">Connexion</option>
+					        <option value="Etude">Etude</option>
+					        <option value="Biblio">Biblio</option>
+					        <option value="Biblio">Autres</option>
+					      </select>
               </div>
 
               <div class="form-group">
@@ -284,7 +289,16 @@
               </div>
               
               <div class="form-group">
-                <input type="text" name="niveau" class="form-control" placeholder="Entrer Niveau">
+                <select name="activite" id="activite" class="form-control">
+					        <option value="Lycee">Primaire</option>
+					        <option value="Lycee">College</option>
+					        <option value="Lycee">Lycee</option>
+					        <option value="L1">L1</option>
+					        <option value="L2">L2</option>
+					        <option value="L3">L3</option>
+					        <option value="M1">M1</option>
+					        <option value="M2">M2</option>
+					      </select>
               </div>
               
               <div class="form-group">
