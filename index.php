@@ -159,10 +159,29 @@
   <!-- MAIN -->
   <main>
     <div class="container-sm" style="background-color:rgb(245, 245, 245)">
+        
+        <div id="statix-version" style="
+          float:right; font-size:22px; border:dashed 6px #696969;
+          -moz-border-radius-topleft: -4px;
+          -moz-border-radius-topright:0px;
+          -moz-border-radius-bottomleft:0px;
+          -moz-border-radius-bottomright:0px;
+          -webkit-border-top-left-radius:-4px;
+          -webkit-border-top-right-radius:0px;
+          -webkit-border-bottom-left-radius:0px;
+          -webkit-border-bottom-right-radius:0px;
+          border-top-left-radius:-4px;
+          border-top-right-radius:0px;
+          border-bottom-left-radius:0px;
+          border-bottom-right-radius:0px;
+          padding:12px
+        "><strong>STATIX</strong> app<br> v0.0.1 beta</div>
+       
         <!-- DATE -->
         <h2><u>Stat</u>: <span style="color:gray">Centre Multimedia</span> | <u>Date</u>: <span style="color:gray"><?php echo date("d/m/Y"); ?></span></h2>
         
         <span id='horloge' style="background-color:#1C1C1C;color:silver;font-size:27px;border-radius:7px;opacity:0.6;padding:7px"></span>
+
 
         <br><br>
 
@@ -323,7 +342,7 @@
   
   <!-- GRAPH BUTTON -->
   <div align="center">
-    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e; -webkit-box-shadow:inset 1px 2px 20px #5e5e5e; box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style="text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e; -webkit-box-shadow:inset 1px 2px 20px #5e5e5e; box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "./chart/graph.php" style="text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
