@@ -309,9 +309,7 @@
   
   <!-- GRAPH BUTTON -->
   <div align="center">
-    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e;
-    -webkit-box-shadow:inset 1px 2px 20px #5e5e5e;
-    box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style = "text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e; -webkit-box-shadow:inset 1px 2px 20px #5e5e5e; box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "graph.php" style="text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
