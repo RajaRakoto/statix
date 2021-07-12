@@ -199,7 +199,7 @@
         ?>
 
         <!-- MODEL0 (button) -->
-          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right; font-size:41px" data-toggle="modal" data-target="#myModal">INPUT</button>
+          <button type="button" class="btn btn-info btn-sm mb-5" style="float:right; font-size:41px" data-toggle="modal" data-target="#myModal">AJOUTER</button>
 
       <table id="statix_table" class="display responsive nowrap" cellspacing="0" width="100%">
         <!-- ENTETE DU TABLEAU - statique (html) -->
