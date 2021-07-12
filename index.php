@@ -41,33 +41,33 @@
     //bug
 
     //UPDATE (notification test)
-    if(isset($_GET['update_data'])){ //ecouteur d'evenement (sur le boutton "SUBMIT")
+    // if(isset($_GET['update_data'])){ //ecouteur d'evenement (sur le boutton "SUBMIT")
       //recuperation de la valeur par $_POST
-      $nom = $_POST['nom']; 
-      $prenom = $_POST['prenom'];
-      $activite = $_POST['activite'];
-      $etablissement = $_POST['etablissement'];
-      $filiere = $_POST['filiere'];
-      $niveau = $_POST['niveau'];
-      $freq = $_POST['freq'];
+      // $nom = $_POST['nom']; 
+      // $prenom = $_POST['prenom'];
+      // $activite = $_POST['activite'];
+      // $etablissement = $_POST['etablissement'];
+      // $filiere = $_POST['filiere'];
+      // $niveau = $_POST['niveau'];
+      // $freq = $_POST['freq'];
       
       //mise a jour de l'entrer au base de donnees
-      $sql = "UPDATE statix_database 
-      SET nom = $nom, prenom = $prenom, activite = $activite, etablissement = $etablissement, filiere = $filiere, niveau = $niveau, freq = $freq
-      WHERE id = $id;
-      ";
+      // $sql = "UPDATE statix_database 
+      // SET nom = $nom, prenom = $prenom, activite = $activite, etablissement = $etablissement, filiere = $filiere, niveau = $niveau, freq = $freq
+      // WHERE id = $id;
+      // ";
 
       //OUTPUT (result)
-      $result = mysqli_query($statix_connexion, $sql); //retourne une valeur boolean
-      if($result) { //si les donnees ont ete bien mis a jour dans la base de donnees
-        $notif = "MISE A JOUR avec success !"; //message
-        $notifClass="alert-success"; //change class (HTML+CSS)
-      }
-      else { //si les donnees n'ont pas ete mis a jour dans la base de donnees
-        $notif = "ERREUR de mise a jour !"; //message
-        $notifClass="alert-danger"; //change class (HTML+CSS)
-      }
-    }
+  //     $result = mysqli_query($statix_connexion, $sql); //retourne une valeur boolean
+  //     if($result) { //si les donnees ont ete bien mis a jour dans la base de donnees
+  //       $notif = "MISE A JOUR avec success !"; //message
+  //       $notifClass="alert-success"; //change class (HTML+CSS)
+  //     }
+  //     else { //si les donnees n'ont pas ete mis a jour dans la base de donnees
+  //       $notif = "ERREUR de mise a jour !"; //message
+  //       $notifClass="alert-danger"; //change class (HTML+CSS)
+  //     }
+  //   }
   ?> -->
   
   <?php
@@ -308,7 +308,7 @@
               </div>
               
               <div class="form-group">
-                <select name="activite" id="activite" class="form-control">
+                <select name="niveau" id="niveau" class="form-control">
 					        <option value="Lycee">Primaire</option>
 					        <option value="Lycee">College</option>
 					        <option value="Lycee">Lycee</option>
@@ -342,7 +342,7 @@
   
   <!-- GRAPH BUTTON -->
   <div align="center">
-    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e; -webkit-box-shadow:inset 1px 2px 20px #5e5e5e; box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "./chart/graph.php" style="text-decoration: none; color: #fff; font-size: 75px"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
+    <button class = "btn btn-primary btn-sm" style="padding:11px;-moz-box-shadow:inset 1px 2px 20px #5e5e5e; -webkit-box-shadow:inset 1px 2px 20px #5e5e5e; box-shadow:inset 1px 2px 20px #5e5e5e;"><a href = "./chart/graph.php" style="text-decoration: none; color: #fff; font-size: 75px" target="_blank"><i class="fas fa-chart-bar"></i> GRAPH </a></button>
   </div>
 
     <br>
