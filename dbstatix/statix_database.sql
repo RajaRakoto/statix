@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : dim. 11 juil. 2021 à 17:56
+-- Généré le : lun. 12 juil. 2021 à 03:59
 -- Version du serveur :  10.4.19-MariaDB
 -- Version de PHP : 8.0.6
 
@@ -40,6 +40,13 @@ CREATE TABLE `statix_database` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
+-- Déchargement des données de la table `statix_database`
+--
+
+INSERT INTO `statix_database` (`id`, `nom`, `prenom`, `activite`, `etablissement`, `filiere`, `niveau`, `freq`, `date`) VALUES
+(72, 'Rakotonirina', 'Raja', 'Connexion', 'CNTEMAD', 'Informatique', 'L3BDGL', 7, '2021-07-11 18:36:36');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -57,7 +64,7 @@ ALTER TABLE `statix_database`
 -- AUTO_INCREMENT pour la table `statix_database`
 --
 ALTER TABLE `statix_database`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
