@@ -1,0 +1,57 @@
+.table-id{
+  text-align: center;
+  font-weight: bolder;
+  background-color: #c2c2c2;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.table-name{
+  text-align: center;
+  font-weight: bolder;
+  background-color: #e4e4e4;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.table-etab{
+  text-align: center;
+  font-weight: bolder;
+  background-color: #faffa0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.table-filiere{
+  text-align: center;
+  font-weight: bolder;
+  background-color: #a0ffee;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.table-level{
+  text-align: center;
+  font-weight: bolder;
+  color: #874f1b;
+  text-shadow:3px 1px 5px #8c8c8c;
+}
+
+.table-freq{
+  font-weight: bolder;
+  color: rgb(233, 122, 233);text-shadow:3px 1px 5px #8c8c8c;
+}
+
+.table-date{
+  font-style:italic;
+}
+
+/* CENTER TABLE */
+thead th {
+  text-align: center;
+}
+
+tbody tr td {
+  text-align: center;
+}

@@ -1,0 +1,2 @@
+<h3><u>Stat</u>: <span style="color:gray">Centre Multimedia</span> | <u>Date</u>: <span style="color:gray"><?php echo date("d/m/Y"); ?></span></h3>
+		<span id='horloge' style="background-color:#1C1C1C;color:silver;font-size:27px;border-radius:7px;opacity:0.6;padding:7px"></span>
