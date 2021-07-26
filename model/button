@@ -1,2 +1,0 @@
- #MODEL0 (dep=bootstrap)
- <button type="button" class="btn btn-info btn-sm mb-5" style="float:right" data-toggle="modal" data-target="#myModal">INPUT</button>
