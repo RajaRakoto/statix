@@ -1,0 +1,12 @@
+database_name = statix_db
+password =
+
+all = statix_db.sql
+
+table{
+etudiants = members.sql
+etablissement = etab.sql
+activite = activity.sql
+filiere = filiere.sql
+niveau = level.sql
+}
